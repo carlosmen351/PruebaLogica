@@ -1,9 +1,12 @@
-let numero;
-let perfecto = 0;
-let contador = 2;
+let valor = document.getElementById("txtNumero");
+let boton = document.getElementById("btnNumero");
+let marco1 = document.getElementById('marco');
 let sonPerfectos = [];
+boton.addEventListener('click', esPerfectoClick);
 
 function esPerfecto(numero) {
+  let perfecto = 0;
+  let contador = 2;
   if (typeof numero !== 'number' || !Number.isInteger(numero) || numero <= 0) {
     throw TypeError('El dato que ingresaste debe ser un numero entero positivo')
   }
@@ -33,9 +36,17 @@ function esPerfecto(numero) {
   }
 };
 
-try {
-  esPerfecto(33550337);
-  console.log(`Los numeros perfectos que hay en tu numero son: ${sonPerfectos}`)
-} catch (error) {
-  console.log(`Error: ${error.message}`)
+function esPerfectoClick() {
+
+  try {
+    let numero = parseInt(valor.value);
+  esPerfecto(numero);
+  marco1.innerHTML += `<h3>Los numeros perfectos que se encuentran dentro de tu numero son: <br/> <br/> ${sonPerfectos} </h3>`
+  } catch (error) {
+    marco1.innerHTML += `<p>Error: ${error.message} </p>`
+  }
 }
+
+
+
+
