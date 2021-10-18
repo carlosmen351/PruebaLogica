@@ -40,8 +40,8 @@ function esPerfectoClick() {
 
   try {
     let numero = parseInt(valor.value);
-  esPerfecto(numero);
-  marco1.innerHTML += `<h3>Los numeros perfectos que se encuentran dentro de tu numero son: <br/> <br/> ${sonPerfectos} </h3>`
+    esPerfecto(numero);
+    marco1.innerHTML += `<h3>Los numeros perfectos que se encuentran dentro de tu numero son: <br><br><br> ${sonPerfectos}. </h3>`
   } catch (error) {
     marco1.innerHTML += `<p>Error: ${error.message} </p>`
   }
